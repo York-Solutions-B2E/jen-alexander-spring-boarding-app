@@ -18,6 +18,7 @@ public class OwnerService {
     }
 
     public List<OwnerDTO> getAllOwners() {
+        System.out.println("in getAllOwners in SERVICE");
         List<Owner> ownersEntity;
         ownersEntity = ownerRepository.findAll();
 
