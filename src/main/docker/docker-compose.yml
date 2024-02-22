@@ -1,7 +1,7 @@
 version: '1'
 
 services:
-  springapp:
+  app:
     build: .
     container_name: happy-tails-app
     environment:
