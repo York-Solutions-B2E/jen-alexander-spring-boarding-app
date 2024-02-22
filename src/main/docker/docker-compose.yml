@@ -1,0 +1,23 @@
+version: '1'
+
+services:
+  springapp:
+    build: .
+    container_name: happy-tails-app
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/happyTails
+    ports:
+      - 8080:8080
+    restart: always
+    depends_on:
+      - db
+  db:
+    image: postgres
+    container_name: db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=happyTails
+    ports:
+      - 5432:5432
+    restart: always
